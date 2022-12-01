@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:48 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/01 15:13:59 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:30:59 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,5 +160,27 @@ int		ft_strlcpy(char *dest, const char *src, size_t size);
 *	@return		The total length of the string they tried to create.
 */
 int		ft_strlcat(char *dest, const char *src, size_t size);
+
+/*
+*	@brief		Converts char c to uppercase letter in case of being a
+*				lowercase letter.
+*
+*	@param		c	Char to be converted to uppercase.
+*
+*	@return		Char c converted to uppercase if it was lowercase, char
+*				c otherwise.
+*/
+int		ft_toupper(int c);
+
+/*
+*	@brief		Converts char c to lowercase letter in case of being a
+*				uppercase letter.
+*
+*	@param		c	Char to be converted to lowercase.
+*
+*	@return		Char c converted to lowercase if it was uppercase, char
+*				c otherwise.
+*/
+int		ft_tolower(int c);
 
 #endif
