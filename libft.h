@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:48 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/01 15:30:59 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/01 20:40:26 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,5 +182,86 @@ int		ft_toupper(int c);
 *				c otherwise.
 */
 int		ft_tolower(int c);
+
+/*
+*	@brief		Looks for the first occurrence of the character c in the 
+*				string s. Returns NULL if the character was not found.
+*
+*	@param		s	String to be searched.
+*	@param		c	Character to be searched for.
+*
+*	@return		Pointer to the first occurrence of the character c in the 
+*				string s. Returns NULL if the character was not found.
+*/
+char	*ft_strchr(const char *s, int c);
+
+/*
+*	@brief		Looks for the last occurrence of the character c in the 
+*				string s.
+*
+*	@param		s	String to be searched.
+*	@param		c	Character to be searched for.
+*
+*	@return		Pointer to the last occurrence of the character c in the
+*				string s.
+*/
+char	*ft_strrchr(const char *s, int c);
+
+/*
+*	@brief		Compares the first n chars of the strings s1 and s2.
+*
+*	@param		s1	Pointer to the first string to be compared.
+*	@param		s2	Pointer to the second string to be compared.
+*	@param		n	Number of chars to be compared.
+*
+*	@return		0 if the strings are equal, a negative number if the first
+*				different char in s1 is less than the first different char in
+*				s2, a positive number if the first different char in s1 is
+*				greater than the first different char in s2.
+*/
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+
+/*
+*	@brief		Looks for the first instance of c in the first n bytes of 
+*				memory starting from s. If no instance is found, returns NULL.
+*				
+*
+*	@param		s	Area of memory to be searched.
+*	@param		c	Character to be searched for in memory.
+*	@param		n	Number of bytes to be searched.
+*
+*	@return		Pointer to the first instance of c in the first n bytes of
+*				memory starting from s. If no instance is found, returns NULL.
+*/
+void	*ft_memchr(const void *s, int c, size_t n);
+
+/*
+*	@brief		Compares the first n bytes of s1 and s2 areas of memory,
+*				interpreting each byte as unsigned char.
+*
+*	@param		s1	Pointer to the first area of memory to be compared.
+*	@param		s2	Pointer to the second area of memory to be compared.
+*	@param		n	Number of bytes to be compared.
+*
+*	@return		0 if the areas of memory are equal, a negative number if the 
+*				first different byte in s1 is less than the first different 
+*				byte in s2, a positive number if the first different byte in 
+*				s1 is greater than the first different byte in s2.
+*/
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+
+/*
+*	@brief		Locates the first occurrence of the null-terminated
+*    			string to_find in the null-terminated string str.
+*
+*	@param		str			String to be searched.
+*	@param		to_find		String to be searched for.
+*
+*	@return		Pointer to the first occurrence of the null-terminated
+*    			string to_find in the null-terminated string str. If the
+*				string to_find is not found, returns NULL. If to_find is an
+*				empty string, returns str.
+*/
+char	*ft_strnstr(const char	*str, const char *to_find, size_t len);
 
 #endif
