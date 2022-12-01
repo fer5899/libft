@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:48 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/01 20:40:26 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/01 21:35:53 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -263,5 +263,39 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 *				empty string, returns str.
 */
 char	*ft_strnstr(const char	*str, const char *to_find, size_t len);
+
+/*
+*	@brief		Converts the initial portion of the string pointed to by
+*				str to int. Discards any whitespace characters until the
+*				first non-whitespace character is found. Then takes as many
+*				characters as possible to form a valid integer representation
+*				and converts them to an integer. The string can contain
+*				optional plus or minus sign. If the first sequence of
+*				non-whitespace characters in str is not a valid integral
+*				number, or if no such sequence exists because either str is
+*				empty or it contains only whitespace characters, no conversion
+*				is performed and zero is returned.
+*
+*	@param		str		String to be converted to int.
+*
+*	@return		The converted integral number as an int value. If no valid
+*				conversion could be performed, a zero value is returned.
+*/
+int		ft_atoi(const char *str);
+
+/*
+*	@brief		Allocates memory for an array of nmemb elements of size bytes 
+*				each and returns a pointer to the allocated memory. The memory 
+*				is set to zero. If nmemb or size is 0, then calloc() returns 
+*				unique pointer value that can later be successfully passed
+*				to free().
+*
+*	@param		nmemb	Number of elements to be allocated.
+*	@param		size	Size of each element.
+*
+*	@return		Pointer to the allocated memory. If the function fails, it
+*				returns NULL.
+*/
+void	*ft_calloc(size_t nmemb, size_t size);
 
 #endif
