@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:48 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/01 21:35:53 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/01 21:59:21 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -297,5 +297,17 @@ int		ft_atoi(const char *str);
 *				returns NULL.
 */
 void	*ft_calloc(size_t nmemb, size_t size);
+
+/*
+*	@brief		returns a pointer to a new string which is a duplicate of
+*        		the string str.  Memory for the new string is obtained with 
+*      			malloc(3), and can be freed with free(3).
+*
+*	@param		str		String to be duplicated.
+*
+*	@return		Pointer to the duplicated string. If the function fails, it
+*				returns NULL.
+*/
+char	*ft_strdup(const char *str);
 
 #endif
