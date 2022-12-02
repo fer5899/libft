@@ -6,14 +6,15 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:08:07 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/01 15:11:22 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/02 13:55:15 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isalnum(int c)
 {
-	if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z') \
-	|| ('0' <= c && c <= '9'))
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
 	return (0);
 }
