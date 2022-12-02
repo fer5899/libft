@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:48 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/02 13:36:41 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/02 14:10:17 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -323,5 +323,18 @@ char	*ft_strdup(const char *str);
 *	@return		Pointer to the substring. If the function fails, it returns NULL.
 */
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+/*
+*	@brief		Creates a new string allocating memory with malloc(3) joining
+*				strings s1 and s2.
+*
+*	@param		s1	First string to be joined.
+*	@param		s2	Second string to be joined.
+*
+*	@return		Pointer to the string created from joining strings s1 and s2.
+*/
+char	*ft_strjoin(char const *s1, char const *s2);
+
+char	*ft_strtrim(char const *s1, char const *set);
 
 #endif
