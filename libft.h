@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:48 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/02 14:10:17 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/02 18:16:41 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -335,6 +335,20 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 */
 char	*ft_strjoin(char const *s1, char const *s2);
 
+/*
+*	@brief		Removes characters specified in set from the beginning and
+*				the end of the string s1. Memory for the new string is
+*				obtained with malloc(3), and can be freed with free(3).
+*
+*	@param		s1		String to be trimmed.
+*	@param		set		Characters to be removed from the beginning and the
+*						end of the string s1.
+*
+*	@return		Pointer to the trimmed string. If the function fails, it
+*				returns NULL.
+*/
 char	*ft_strtrim(char const *s1, char const *set);
+
+char	**ft_split(char const *s, char c);
 
 #endif
