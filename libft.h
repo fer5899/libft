@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:48 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/05 21:41:35 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:07:38 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -361,5 +361,17 @@ char	*ft_strtrim(char const *s1, char const *set);
 *				NULL if memory allocation fails.
 */
 char	**ft_split(char const *s, char c);
+
+/*
+*	@brief		Allocates (with malloc(3)) and returns a string representing
+*				the integer received as an argument. Negative numbers are
+*				handled.
+*
+*	@param		n	Integer to be converted to string.
+*
+*	@return		The string representing the integer. NULL if memory allocation
+*				fails.
+*/
+char	*ft_itoa(int n);
 
 #endif
