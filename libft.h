@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:48 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/02 18:16:41 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/05 21:41:35 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -349,6 +349,17 @@ char	*ft_strjoin(char const *s1, char const *s2);
 */
 char	*ft_strtrim(char const *s1, char const *set);
 
+/*
+*	@brief		Allocates (with malloc(3)) an array of strings that results 
+*				from splitting string s into substrings using char c as the
+*				delimiter. The array ends with a NULL pointer.
+*
+*	@param		s	String to split.
+*	@param		c	Char used as delimiter.
+*
+*	@return		The array of strings that results from splitting string s.
+*				NULL if memory allocation fails.
+*/
 char	**ft_split(char const *s, char c);
 
 #endif
