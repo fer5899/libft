@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 21:43:59 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/05 23:05:44 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/06 09:38:18 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ char	*ft_itoa(int n)
 	char	*str;
 	int		len;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	len = count_digits(n);
 	str = (char *) ft_calloc(len + 1, sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	if (n == -2147483648)
-		return ((char *) ft_memcpy(str, "-2147483648", len));
 	if (n == 0)
 		str[0] = '0';
 	if (n < 0)
