@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:48 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/06 10:02:25 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/06 10:06:43 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -404,5 +404,13 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 *	@param		fd	File descriptor on which to write.
 */
 void	ft_putchar_fd(char c, int fd);
+
+/*
+*	@brief		Outputs the string s to the given file descriptor.
+*
+*	@param		s	String to output.
+*	@param		fd	File descriptor on which to write.
+*/
+void	ft_putstr_fd(char *s, int fd);
 
 #endif
