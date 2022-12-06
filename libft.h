@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:48 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/06 09:33:46 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/06 09:51:01 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -374,6 +374,16 @@ char	**ft_split(char const *s, char c);
 */
 char	*ft_itoa(int n);
 
+/*
+*	@brief		Applies the function f to each character of the string s
+*				to create a new string (with malloc(3)) resulting from
+*				successive applications of f.
+*
+*	@param		s	String to be mapped.
+*	@param		f	Function to apply to each character of s.
+*
+*	@return		The string created from the successive applications of f.
+*/
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
