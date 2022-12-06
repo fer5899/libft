@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 09:32:37 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/06 09:47:52 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/06 09:59:15 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*newstr;
-	int		i;
+	char			*newstr;
+	unsigned int	i;
 
 	newstr = ft_strdup(s);
 	i = 0;
