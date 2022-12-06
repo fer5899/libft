@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:48 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/06 10:13:16 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/06 10:44:36 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}	t_list;
+}					t_list;
 
 /*
 *	@brief		Checks for an alphabetic character.
@@ -429,5 +429,93 @@ void	ft_putendl_fd(char *s, int fd);
 *	@param		fd	File descriptor on which to write.
 */
 void	ft_putnbr_fd(int n, int fd);
+
+/*
+*	@brief		Allocates (with malloc(3)) and returns a new list node. The
+*				variable content is initialized with the value of the parameter
+*				content. The variable next is initialized to NULL.
+*
+*	@param		content	Content of the new list node.
+*
+*	@return		The new list node. NULL if memory allocation fails.
+*/
+t_list	*ft_lstnew(void *content);
+
+/*
+*	@brief		Adds the node lst at the beginning of the list.
+*
+*	@param		*lst	Pointer to the first node of the list.
+*	@param		*new	Pointer to the node to add to the list.
+*/
+void ft_lstadd_front(t_list **lst, t_list *new);
+
+/*
+*	@brief		Returns the number of nodes in the list.
+*
+*	@param		*lst	Pointer to the first node of the list.
+*
+*	@return		The number of nodes in the list.
+*/
+int ft_lstsize(t_list *lst);
+
+/*
+*	@brief		Returns the last node of the list.
+*
+*	@param		*lst	Pointer to the first node of the list.
+*
+*	@return		The last node of the list.
+*/
+t_list *ft_lstlast(t_list *lst);
+
+/*
+*	@brief		Adds the node lst at the end of the list.
+*
+*	@param		*lst	Pointer to the first node of the list.
+*	@param		*new	Pointer to the node to add to the list.
+*/
+void ft_lstadd_back(t_list **lst, t_list *new);
+
+/*
+*	@brief		Deletes and frees the given list node using the function del
+*				given as a parameter and free(3). The memory of next must not
+*				be freed.
+*
+*	@param		*lst	Pointer to the list node to be deleted.
+*	@param		*del	Function used to delete the content of the list node.
+*/
+void ft_lstdelone(t_list *lst, void (*del)(void*));
+
+/*
+*	@brief		Deletes and frees the given list using the function del given
+*				as a parameter and free(3). The pointer to the first node of
+*				the list must be set to NULL.
+*
+*	@param		*lst	Pointer to the first node of the list.
+*	@param		*del	Function used to delete the content of the list node.
+*/
+void ft_lstclear(t_list **lst, void (*del)(void*));
+
+/*
+*	@brief		Iterates the list lst and applies the function f to the content
+*				of each node.
+*
+*	@param		*lst	Pointer to the first node of the list.
+*	@param		*f		Function to apply to the content of each node.
+*/
+void ft_lstiter(t_list *lst, void (*f)(void *));
+
+/*
+*	@brief		Iterates the list lst and applies the function f to the content
+*				of each node. Creates a new list resulting of the successive
+*				applications of the function f. The del function is used to
+*				delete the content of a node if needed.
+*
+*	@param		*lst	Pointer to the first node of the list.
+*	@param		*f		Function to apply to the content of each node.
+*	@param		*del	Function used to delete the content of a node if needed.
+*
+*	@return		The new list. NULL if memory allocation fails.
+*/
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
