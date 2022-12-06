@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:48 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/06 10:10:03 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/06 10:13:16 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -421,5 +421,13 @@ void	ft_putstr_fd(char *s, int fd);
 *	@param		fd	File descriptor on which to write.
 */
 void	ft_putendl_fd(char *s, int fd);
+
+/*
+*	@brief		Outputs the integer n to the given file descriptor.
+*
+*	@param		n	Integer to output.
+*	@param		fd	File descriptor on which to write.
+*/
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
