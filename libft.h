@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:48 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/06 09:58:25 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/06 10:02:25 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -395,5 +396,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 *	@param		f	Function to apply to each character of s.
 */
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+/*
+*	@brief		Outputs the character c to the given file descriptor.
+*
+*	@param		c	Character to output.
+*	@param		fd	File descriptor on which to write.
+*/
+void	ft_putchar_fd(char c, int fd);
 
 #endif
