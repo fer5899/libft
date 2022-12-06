@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:48 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/06 09:51:01 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/06 09:58:25 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -385,5 +385,15 @@ char	*ft_itoa(int n);
 *	@return		The string created from the successive applications of f.
 */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+/*
+*	@brief		Applies the function f to each character of the string s
+*				as a parameter. Each character is passed by address to f
+*				to be modified if necessary.
+*
+*	@param		s	String to be iterated.
+*	@param		f	Function to apply to each character of s.
+*/
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 #endif
