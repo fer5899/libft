@@ -6,7 +6,7 @@
 #    By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/01 13:41:20 by fgomez-d          #+#    #+#              #
-#    Updated: 2022/12/06 12:11:37 by fgomez-d         ###   ########.fr        #
+#    Updated: 2022/12/06 13:39:07 by fgomez-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC=ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 
 SRC_BONUS=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-			# ft_lstmap.c
+			ft_lstmap.c
 
 OBJ=$(SRC:.c=.o)
 
