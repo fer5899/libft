@@ -6,7 +6,7 @@
 #    By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/01 13:41:20 by fgomez-d          #+#    #+#              #
-#    Updated: 2023/04/28 14:33:58 by fgomez-d         ###   ########.fr        #
+#    Updated: 2023/07/02 12:34:42 by fgomez-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,14 +31,13 @@ SRC=ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_stknewfirst.c ft_getstkidx.c ft_getstknode.c ft_quick_sort.c \
 	ft_abs.c ft_minmax.c ft_atoi_base.c ft_reg_calloc.c
 	
-OBJ=$(SRC:.c=.o)
 
 OBJ=$(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-#	ar rcs $(NAME) $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
