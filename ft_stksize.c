@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_stksize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 15:40:02 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/20 20:33:57 by fgomez-d         ###   ########.fr       */
+/*   Created: 2022/12/06 11:01:56 by fgomez-d          #+#    #+#             */
+/*   Updated: 2023/03/23 14:10:23 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_stksize(t_stk *stk)
 {
-	if (s == NULL)
-		return (NULL);
-	while (*s != '\0')
+	int	len;
+
+	if (stk == NULL)
+		return (0);
+	if (stk != stk->first)
+		stk = stk->first;
+	if (stk->next == stk->first)
+		return (1);
+	len = 1;
+	stk = stk->next;
+	while (stk->next != stk->first)
 	{
-		if (*s == (char) c)
-			return ((char *) s);
-		s++;
+		stk = stk->next;
+		len++;
 	}
-	if ((char) c == '\0')
-		return ((char *) s);
-	return (NULL);
+	len++;
+	return (len);
 }

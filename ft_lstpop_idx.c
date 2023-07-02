@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstpop_idx.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 11:25:16 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/06 16:17:35 by fgomez-d         ###   ########.fr       */
+/*   Created: 2023/02/15 16:06:11 by fgomez-d          #+#    #+#             */
+/*   Updated: 2023/02/17 12:13:25 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+t_list	*ft_lstpop_idx(t_list *lst, int idx)
 {
-	if (*lst == NULL)
-		*lst = new;
-	else
-		ft_lstlast(*lst)->next = new;
+	int		size;
+	t_list	*popped;
+
+	if (lst == NULL)
+		return (NULL);
+	size = ft_lstsize(lst);
+	if (idx >= size || idx < 0)
+		return (NULL);
+	popped = lst;
+	while (idx > 0)
+	{
+		popped = popped->next;
+		idx--;
+	}
+	return (ft_lstpop(lst, popped));
 }

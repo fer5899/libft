@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_stkiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 15:40:02 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/20 20:33:57 by fgomez-d         ###   ########.fr       */
+/*   Created: 2022/12/06 12:11:47 by fgomez-d          #+#    #+#             */
+/*   Updated: 2023/03/08 15:21:34 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_stkiter(t_stk *stk, void (*f)(void *))
 {
-	if (s == NULL)
-		return (NULL);
-	while (*s != '\0')
+	if (stk == NULL || f == NULL)
+		return ;
+	if (stk != stk->first)
+		stk = stk->first;
+	while (stk->next != stk->first)
 	{
-		if (*s == (char) c)
-			return ((char *) s);
-		s++;
+		f(stk->content);
+		stk = stk->next;
 	}
-	if ((char) c == '\0')
-		return ((char *) s);
-	return (NULL);
+	f(stk->content);
 }

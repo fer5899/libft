@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_stkadd_top.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 15:40:02 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/20 20:33:57 by fgomez-d         ###   ########.fr       */
+/*   Created: 2022/12/06 11:25:16 by fgomez-d          #+#    #+#             */
+/*   Updated: 2023/03/21 20:00:22 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_stkadd_top(t_stk *stk, t_stk *new_node)
 {
-	if (s == NULL)
-		return (NULL);
-	while (*s != '\0')
+	if (new_node == NULL)
+		return ;
+	if (stk == NULL)
 	{
-		if (*s == (char) c)
-			return ((char *) s);
-		s++;
+		stk = new_node;
+		stk->first = stk;
+		stk->next = stk;
 	}
-	if ((char) c == '\0')
-		return ((char *) s);
-	return (NULL);
+	if (stk != stk->first)
+		stk = stk->first;
+	new_node->next = stk;
+	new_node->first = new_node;
+	ft_stklast(stk)->next = new_node;
+	ft_stknewfirst(stk, new_node);
 }

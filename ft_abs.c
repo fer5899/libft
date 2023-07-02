@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 15:40:02 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/20 20:33:57 by fgomez-d         ###   ########.fr       */
+/*   Created: 2023/04/12 16:50:21 by fgomez-d          #+#    #+#             */
+/*   Updated: 2023/04/12 16:51:18 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_abs(int n)
 {
-	if (s == NULL)
-		return (NULL);
-	while (*s != '\0')
-	{
-		if (*s == (char) c)
-			return ((char *) s);
-		s++;
-	}
-	if ((char) c == '\0')
-		return ((char *) s);
-	return (NULL);
+	if (n < 0)
+		return (-n);
+	return (n);
 }

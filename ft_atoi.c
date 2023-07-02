@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 20:43:58 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/01 21:02:52 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/23 18:48:19 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	ft_atoi(const char *str)
 	int	sign;
 	int	read_numbers;
 
+	if (str == NULL)
+		return (0);
 	num = 0;
 	read_numbers = 0;
 	while ((*str == ' ' || (9 <= *str && *str <= 13)) && *str != '\0')

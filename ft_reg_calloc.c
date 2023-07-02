@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_reg_calloc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 15:40:02 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/20 20:33:57 by fgomez-d         ###   ########.fr       */
+/*   Created: 2023/04/12 16:50:21 by fgomez-d          #+#    #+#             */
+/*   Updated: 2023/04/28 14:33:38 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_reg_calloc(size_t nmemb, size_t size, t_list **alloc)
 {
-	if (s == NULL)
+	void	*ptr;
+	t_list	*new_node;
+
+	ptr = ft_calloc(nmemb, size);
+	if (!ptr)
 		return (NULL);
-	while (*s != '\0')
-	{
-		if (*s == (char) c)
-			return ((char *) s);
-		s++;
-	}
-	if ((char) c == '\0')
-		return ((char *) s);
-	return (NULL);
+	new_node = ft_lstnew(ptr);
+	if (!new_node)
+		return (NULL);
+	if (!*alloc)
+		*alloc = new_node;
+	else
+		ft_lstadd_back(*alloc, new_node);
+	return (ptr);
 }

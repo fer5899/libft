@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstpop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 15:40:02 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/20 20:33:57 by fgomez-d         ###   ########.fr       */
+/*   Created: 2023/02/15 16:06:11 by fgomez-d          #+#    #+#             */
+/*   Updated: 2023/02/17 12:07:00 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
-{
-	if (s == NULL)
+t_list	*ft_lstpop(t_list *lst, t_list *to_pop)
+{	
+	if (lst == NULL || to_pop == NULL)
 		return (NULL);
-	while (*s != '\0')
+	while (lst != NULL)
 	{
-		if (*s == (char) c)
-			return ((char *) s);
-		s++;
+		if (lst->next == to_pop)
+		{
+			lst->next = lst->next->next;
+			to_pop->next = NULL;
+			return (to_pop);
+		}
+		lst = lst->next;
 	}
-	if ((char) c == '\0')
-		return ((char *) s);
 	return (NULL);
 }

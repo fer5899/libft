@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_min.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 15:40:02 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/20 20:33:57 by fgomez-d         ###   ########.fr       */
+/*   Created: 2023/04/12 17:55:31 by fgomez-d          #+#    #+#             */
+/*   Updated: 2023/04/12 18:01:30 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_minmax(int a, int b, int find_min)
 {
-	if (s == NULL)
-		return (NULL);
-	while (*s != '\0')
+	if (find_min)
 	{
-		if (*s == (char) c)
-			return ((char *) s);
-		s++;
+		if (a <= b)
+			return (a);
+		return (b);
 	}
-	if ((char) c == '\0')
-		return ((char *) s);
-	return (NULL);
+	else
+	{
+		if (a >= b)
+			return (a);
+		return (b);
+	}
 }

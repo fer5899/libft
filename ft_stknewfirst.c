@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_stknewfirst.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 15:40:02 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/20 20:33:57 by fgomez-d         ###   ########.fr       */
+/*   Created: 2023/02/17 13:12:20 by fgomez-d          #+#    #+#             */
+/*   Updated: 2023/03/08 15:21:44 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_stknewfirst(t_stk *stk, t_stk *new_first)
 {
-	if (s == NULL)
-		return (NULL);
-	while (*s != '\0')
+	t_stk	*start;
+
+	if (ft_getstkidx(stk, new_first) == -1)
+		return ;
+	start = stk;
+	while (stk->next != start)
 	{
-		if (*s == (char) c)
-			return ((char *) s);
-		s++;
+		stk->first = new_first;
+		stk = stk->next;
 	}
-	if ((char) c == '\0')
-		return ((char *) s);
-	return (NULL);
+	stk->first = new_first;
 }

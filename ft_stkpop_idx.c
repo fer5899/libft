@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_stkpop_idx.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 15:40:02 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/20 20:33:57 by fgomez-d         ###   ########.fr       */
+/*   Created: 2023/02/15 16:06:11 by fgomez-d          #+#    #+#             */
+/*   Updated: 2023/03/25 10:55:44 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+t_stk	*ft_stkpop_idx(t_stk *stk, int idx)
 {
-	if (s == NULL)
+	int		size;
+	t_stk	*popped;
+
+	if (stk == NULL)
 		return (NULL);
-	while (*s != '\0')
+	size = ft_stksize(stk);
+	if (idx >= size || idx < 0)
+		return (NULL);
+	if (stk != stk->first)
+		stk = stk->first;
+	popped = stk;
+	while (idx > 0)
 	{
-		if (*s == (char) c)
-			return ((char *) s);
-		s++;
+		popped = popped->next;
+		idx--;
 	}
-	if ((char) c == '\0')
-		return ((char *) s);
-	return (NULL);
+	return (ft_stkpop(&stk, popped));
 }

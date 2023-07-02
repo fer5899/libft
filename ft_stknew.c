@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_stknew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 15:40:02 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/20 20:33:57 by fgomez-d         ###   ########.fr       */
+/*   Created: 2022/12/06 10:30:33 by fgomez-d          #+#    #+#             */
+/*   Updated: 2023/03/21 20:49:43 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+t_stk	*ft_stknew(void *content)
 {
-	if (s == NULL)
+	t_stk	*node;
+
+	node = (t_stk *) malloc(sizeof(t_stk));
+	if (node == NULL)
 		return (NULL);
-	while (*s != '\0')
-	{
-		if (*s == (char) c)
-			return ((char *) s);
-		s++;
-	}
-	if ((char) c == '\0')
-		return ((char *) s);
-	return (NULL);
+	node->content = content;
+	node->first = node;
+	node->next = node;
+	return (node);
 }

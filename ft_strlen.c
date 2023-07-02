@@ -6,14 +6,18 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 17:09:19 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/01 15:13:54 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/12/21 14:22:09 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+int	ft_strlen(const char *str)
 {
 	int	i;
 
+	if (str == NULL)
+		return (-1);
 	i = 0;
 	while (str[i])
 		i++;

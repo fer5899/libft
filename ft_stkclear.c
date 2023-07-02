@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_stkclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 15:40:02 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/20 20:33:57 by fgomez-d         ###   ########.fr       */
+/*   Created: 2022/12/06 11:52:43 by fgomez-d          #+#    #+#             */
+/*   Updated: 2023/03/08 15:21:28 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_stkclear(t_stk **stk, void (*del)(void*))
 {
-	if (s == NULL)
-		return (NULL);
-	while (*s != '\0')
+	t_stk	*next_node;
+
+	if (*stk == NULL)
+		return ;
+	*stk = (*stk)->first;
+	while ((*stk)->next != (*stk)->first)
 	{
-		if (*s == (char) c)
-			return ((char *) s);
-		s++;
+		next_node = (*stk)->next;
+		ft_stkdelone(*stk, del);
+		*stk = next_node;
 	}
-	if ((char) c == '\0')
-		return ((char *) s);
-	return (NULL);
+	ft_stkdelone(*stk, del);
+	*stk = NULL;
 }
