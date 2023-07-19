@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:50:21 by fgomez-d          #+#    #+#             */
-/*   Updated: 2023/04/28 14:33:38 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2023/07/19 19:53:02 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ void	*ft_reg_calloc(size_t nmemb, size_t size, t_list **alloc)
 	if (!*alloc)
 		*alloc = new_node;
 	else
-		ft_lstadd_back(*alloc, new_node);
+		ft_lstadd_back(alloc, new_node);
 	return (ptr);
 }

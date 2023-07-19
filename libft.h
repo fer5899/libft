@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:48 by fgomez-d          #+#    #+#             */
-/*   Updated: 2023/04/28 14:37:31 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2023/07/19 19:52:23 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -516,7 +516,7 @@ t_list	*ft_lstlast(t_list *lst);
 *	@param		*lst	Pointer to the first node of the list.
 *	@param		*new_node	Pointer to the node to add to the list.
 */
-void	ft_lstadd_back(t_list *lst, t_list *new_node);
+void	ft_lstadd_back(t_list **lst, t_list *new_node);
 
 /*
 *	@brief		Deletes and frees the given list node using the function del
@@ -594,7 +594,7 @@ t_list	*ft_lstrpl(t_list *bg, t_list *old, t_list *new, void (*del)(void *));
 *
 *	@return		The node that was popped.
 */
-t_list	*ft_lstpop(t_list *lst, t_list *to_pop);
+t_list	*ft_lstpop(t_list **lst, t_list *to_pop);
 
 /*
 *	@brief		Removes the list node in the position `idx` from the list `lst`, 
