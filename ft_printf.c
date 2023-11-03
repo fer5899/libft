@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 11:42:58 by fgomez-d          #+#    #+#             */
-/*   Updated: 2023/01/26 13:36:11 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2023/11/03 12:14:16 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ int	ft_printf(const char *str, ...)
 	while (*str != '\0')
 	{
 		if (*str == '%' && ft_strchr("cspdiuxX", str[1]) && str[1] != '\0')
-				count += print_rawfstr(*(++str), va_arg(arg_list, void *));
+			count += print_rawfstr(*(++str), va_arg(arg_list, void *));
 		else
 		{
 			if (*str == '%')

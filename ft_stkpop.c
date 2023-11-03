@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 16:06:11 by fgomez-d          #+#    #+#             */
-/*   Updated: 2023/03/28 11:38:34 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2023/11/03 12:14:36 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	redirect_links(t_stk **stk, t_stk *to_pop, t_stk *prev)
 }
 
 t_stk	*ft_stkpop(t_stk **stk, t_stk *to_pop)
-{	
+{
 	t_stk	*prev;
 	t_stk	*orig;
 

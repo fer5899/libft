@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 18:14:12 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/12/05 21:36:14 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2023/11/03 12:14:29 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,6 @@ char	**ft_split(char const *s, char c)
 			return (protect_alloc(&strtab));
 		ft_strlcpy(strtab[wi], s, wlen + 1);
 		wi++;
-	}	
+	}
 	return (strtab);
 }

@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 15:34:15 by fgomez-d          #+#    #+#             */
-/*   Updated: 2023/01/26 14:07:33 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2023/11/03 12:14:41 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	count_until_endl(char *buf, int *ln_len)
 void	update_buf(char *buf, int subbuf_len, int endln_found)
 {
 	if (endln_found == 2)
-			subbuf_len = BUFFER_SIZE;
+		subbuf_len = BUFFER_SIZE;
 	ft_memmove(buf, buf + subbuf_len, BUFFER_SIZE - subbuf_len);
 	ft_bzero(buf + (BUFFER_SIZE - subbuf_len), subbuf_len);
 }
